@@ -8,7 +8,7 @@ steps:
 - task: Docker@2
  inputs:
    containerRegistry: 'dockerRegistry'
-   repository: '$(dockerRegistry)/$(name)'
+   repository: '$(netapp)/$(kirankvathan)'
    command: 'buildAndPush'
    Dockerfile: '**/Dockerfile'
 - task: PublishBuildArtifacts@1
