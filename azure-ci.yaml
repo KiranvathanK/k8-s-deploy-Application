@@ -11,6 +11,7 @@ steps:
     repository: '$(kirankvathan)/$(netapp)'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    buildContext: '.'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.SourcesDirectory)/charts'
