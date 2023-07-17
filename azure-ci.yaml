@@ -6,11 +6,11 @@ variables:
  buildConfiguration: 'Release'
 steps:
 - task: Docker@2
- inputs:
-   containerRegistry: 'kirankvathan'
-   repository: '$(netapp)/$(netapp)'
-   command: 'buildAndPush'
-   Dockerfile: '**/Dockerfile'
+  inputs:
+    containerRegistry: 'kirankvathan'
+    repository: '$(netapp)/$(netapp)'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
 - task: PublishBuildArtifacts@1
  inputs:
    PathtoPublish: '$(Build.SourcesDirectory)/charts'
