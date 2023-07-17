@@ -1,0 +1,25 @@
+trigger:
+  - master
+
+variables:
+- group: Test
+
+stages:
+  - stage: Apply_Infrastructure
+    jobs:
+      - job: Apply_Terraform
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+        
+          - task: TerraformInstaller@0
+            inputs:
+              terraformVersion: '0.14.3'
+
+          - script: |
+              cd dev/
+
+              echo $(AWS_ACCESS_KEY_ID)
+              
+              terraform init
+              terraform apply --auto-approve
