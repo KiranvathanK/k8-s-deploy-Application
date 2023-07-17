@@ -7,8 +7,8 @@ variables:
 steps:
 - task: Docker@2
  inputs:
-   containerRegistry: 'dockerRegistry'
-   repository: '$(netapp)/$(kirankvathan)'
+   containerRegistry: 'kirankvathan'
+   repository: '$(netapp)/$(netapp)'
    command: 'buildAndPush'
    Dockerfile: '**/Dockerfile'
 - task: PublishBuildArtifacts@1
