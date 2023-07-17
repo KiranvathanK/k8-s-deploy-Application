@@ -12,7 +12,7 @@ steps:
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
 - task: PublishBuildArtifacts@1
- inputs:
-   PathtoPublish: '$(Build.SourcesDirectory)/charts'
-   ArtifactName: 'charts'
-   publishLocation: 'Container'
+  inputs:
+    PathtoPublish: '$(Build.SourcesDirectory)/charts'
+    ArtifactName: 'charts'
+    publishLocation: 'Container'
